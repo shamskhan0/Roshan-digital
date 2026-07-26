@@ -88,7 +88,17 @@ def seed_data():
         ]
         db.session.add_all(plans)
         db.session.commit()
-
+if User.query.filter_by(email="admin@roshan.com").first() is None:
+    admin = User(
+        email="admin@roshan.com",
+        name="Admin",
+        password="admin123",
+        role="admin",
+        verified=True,
+        active=True
+    )
+    db.session.add(admin)
+    db.session.commit()
 
 def user_dict(u):
     return {
