@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Route /api/* to backend/index.php
+RewriteRule ^api/(.+)$ backend/index.php [QSA,L]
+
+# If not a file or directory, serve frontend index.html (SPA)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [L]

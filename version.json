@@ -1,0 +1,8 @@
+{
+  "name": "Roshan Digital",
+  "version": "1.3.1",
+  "database_version": "003",
+  "release_date": "2026-07-24",
+  "php_version": "8.x",
+  "description": "FIX: Admin panel not showing + Server connection failed. Added api() helper to all 61 fetch calls. Router now handles /api/admin/ at top level. Vercel.json rewrites. DEPLOYMENT-FIX.md updated."
+}

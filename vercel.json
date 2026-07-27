@@ -1,0 +1,23 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "cd roshan-digital-php/frontend && npm install && npm run build",
+  "outputDirectory": "roshan-digital-php/frontend/dist",
+  "framework": "vite",
+  "installCommand": "cd roshan-digital-php/frontend && npm install",
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://roshan-digital-production-3a27.up.railway.app/api/:path*"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/:path*",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET, POST, PUT, DELETE, OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Authorization" }
+      ]
+    }
+  ]
+}

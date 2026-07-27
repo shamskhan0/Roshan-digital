@@ -1,0 +1,11 @@
+# Protect admin folder — only allow PHP files
+<FilesMatch "\.(php)$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
+
+# Block direct access to backup data
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^files/ - [F,L]
+</IfModule>
